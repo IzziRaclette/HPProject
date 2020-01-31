@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemDto.cs" />
     <Compile Include="SceneDto.cs" />
     <Compile Include="Enum\Gender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

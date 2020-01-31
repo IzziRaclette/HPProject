@@ -34,5 +34,29 @@ namespace Isima.DAL
             }
             return null;
         }
+
+        public static Item ToEntity(this ItemDto dto)
+        {
+            return new Item
+            {
+                ID = dto.ID,
+                Name = dto.Name,
+                Content = dto.Content
+            };
+        }
+
+        public static ItemDto ToDto(this Item entity)
+        {
+            if (entity != null)
+            {
+                return new ItemDto
+                {
+                    ID = entity.ID,
+                    Name = entity.Name,
+                    Content = entity.Content
+                };
+            }
+            return null;
+        }
     }
 }

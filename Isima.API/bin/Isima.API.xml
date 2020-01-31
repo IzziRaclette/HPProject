@@ -481,6 +481,27 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:Isima.API.Controllers.ItemController">
+            <summary>
+            Student Endpoint
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+        </member>
+        <member name="M:Isima.API.Controllers.ItemController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Isima.API.Controllers.ItemController"/> class.
+            </summary>
+        </member>
+        <member name="M:Isima.API.Controllers.ItemController.Get(System.Int32)">
+            <summary>
+            Get a Item by its ID 
+            </summary>
+            <remarks>
+            Get a Item by its ID 
+            </remarks>
+            <returns></returns>
+            <response code="200"> A Item</response>
+        </member>
         <member name="T:Isima.API.Controllers.SceneController">
             <summary>
             Student Endpoint
@@ -501,6 +522,35 @@
             </remarks>
             <returns></returns>
             <response code="200"> A scene</response>
+        </member>
+        <member name="T:Isima.API.Models.ItemViewModel">
+            <summary>
+            Scenb render to client 
+            </summary>
+        </member>
+        <member name="P:Isima.API.Models.ItemViewModel.ID">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Isima.API.Models.ItemViewModel.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Isima.API.Models.ItemViewModel.Content">
+            <summary>
+            Gets or sets the content.
+            </summary>
+            <value>
+            The content.
+            </value>
         </member>
         <member name="T:Isima.API.Models.SceneViewModel">
             <summary>
