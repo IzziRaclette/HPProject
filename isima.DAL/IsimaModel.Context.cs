@@ -25,7 +25,6 @@ namespace isima.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Student> Student { get; set; }
         public virtual DbSet<Scene> Scene { get; set; }
     }
 }

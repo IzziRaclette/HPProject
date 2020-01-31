@@ -11,38 +11,13 @@ namespace Isima.DAL
 {
     public static class Extensions
     {
-        public static Student ToEntity(this StudentDto dto)
-        {
-            return new Student
-            {
-                Name = dto.Name,
-                Surname = dto.Surname,
-                DateOfBirth = dto.DateofBirth,
-                Gender = (int)dto.Gender
-            };
-        }
-
-        public static StudentDto ToDto(this Student entity)
-        {
-            if(entity != null)
-            {
-                return new StudentDto
-                {
-                    Name = entity.Name,
-                    Surname = entity.Surname,
-                    DateofBirth = entity.DateOfBirth,
-                    Gender = (Gender)entity.Gender
-                };
-            }
-            return null;
-     
-        }
-
         public static Scene ToEntity(this SceneDto dto)
         {
             return new Scene
             {
-                // ...
+                ID = dto.ID,
+                Title = dto.Title,
+                Content = dto.Content
             };
         }
 
@@ -52,11 +27,12 @@ namespace Isima.DAL
             {
                 return new SceneDto
                 {
-                    // ...
+                    ID = entity.ID,
+                    Title = entity.Title,
+                    Content = entity.Content
                 };
             }
             return null;
-
         }
     }
 }

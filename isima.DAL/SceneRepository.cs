@@ -22,7 +22,7 @@ namespace isima.DAL
         }
 
 
-        public List<SceneDto> GetScene(int ID)
+        public SceneDto GetScene(int ID)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace isima.DAL
                     ID = x.ID,
                     Content = x.Content,
                     Title = x.Title
-                }).ToList();
+                }).ToList().ElementAt(0);
             }
             catch (Exception e)
             {
