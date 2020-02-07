@@ -29,13 +29,13 @@ namespace Isima.API.Controllers
 
 
         /// <summary>
-        /// Get a scene by its ID 
+        /// Get a Scene by its ID 
         /// </summary>
         /// <remarks>
-        /// Get a scene by its ID 
+        /// Get a Scene by its ID 
         /// </remarks>
         /// <returns></returns>
-        /// <response code="200"> A scene</response>
+        /// <response code="200"> A Scene</response>
         [ResponseType(typeof(IEnumerable<SceneViewModel>))]
         public IHttpActionResult Get(int ID)
         {

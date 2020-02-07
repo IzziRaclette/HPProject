@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inventory.cs">
+      <DependentUpon>IsimaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Item.cs">
       <DependentUpon>IsimaModel.tt</DependentUpon>
     </Compile>
@@ -60,6 +63,7 @@
       <DependentUpon>IsimaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemRepository.cs" />
+    <Compile Include="InventoryRepository.cs" />
     <Compile Include="SceneRepository.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IsimaModel.Context.cs">

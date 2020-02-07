@@ -481,6 +481,27 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:Isima.API.Controllers.InventoryController">
+            <summary>
+            Inventory Endpoint
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+        </member>
+        <member name="M:Isima.API.Controllers.InventoryController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Isima.API.Controllers.InventoryController"/> class.
+            </summary>
+        </member>
+        <member name="M:Isima.API.Controllers.InventoryController.Get">
+            <summary>
+            Get list of all items of inventory 
+            </summary>
+            <remarks>
+            Get list of all items of inventory from the database no filtered
+            </remarks>
+            <returns></returns>
+            <response code="200"> List of items of inventory</response>
+        </member>
         <member name="T:Isima.API.Controllers.ItemController">
             <summary>
             Student Endpoint
@@ -515,13 +536,26 @@
         </member>
         <member name="M:Isima.API.Controllers.SceneController.Get(System.Int32)">
             <summary>
-            Get a scene by its ID 
+            Get a Scene by its ID 
             </summary>
             <remarks>
-            Get a scene by its ID 
+            Get a Scene by its ID 
             </remarks>
             <returns></returns>
-            <response code="200"> A scene</response>
+            <response code="200"> A Scene</response>
+        </member>
+        <member name="T:Isima.API.Models.InventoryViewModel">
+            <summary>
+            Scenb render to client 
+            </summary>
+        </member>
+        <member name="P:Isima.API.Models.InventoryViewModel.ID_item">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
         </member>
         <member name="T:Isima.API.Models.ItemViewModel">
             <summary>

@@ -27,5 +27,6 @@ namespace isima.DAL
     
         public virtual DbSet<Scene> Scene { get; set; }
         public virtual DbSet<Item> Item { get; set; }
+        public virtual DbSet<Inventory> Inventory { get; set; }
     }
 }

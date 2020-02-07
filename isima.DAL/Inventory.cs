@@ -12,12 +12,10 @@ namespace isima.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Item
+    public partial class Inventory
     {
-        public int ID { get; set; }
-        public string Content { get; set; }
-        public string Name { get; set; }
+        public int ID_item { get; set; }
     
-        public virtual Inventory Inventory { get; set; }
+        public virtual Item Item { get; set; }
     }
 }

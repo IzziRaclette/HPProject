@@ -7,6 +7,8 @@
       <Diagram DiagramId="589e139390654541b22fda9334110e93" Name="Diagram1">
         <EntityTypeShape EntityType="IsimaModel.Scene" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="IsimaModel.Item" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="IsimaModel.Inventory" Width="1.5" PointX="5.625" PointY="1" />
+        <AssociationConnector Association="IsimaModel.FK_Inventory_Item" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -3,6 +3,11 @@
   <EntityContainer Name="IsimaEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Scene" EntityType="IsimaModel.Scene" />
     <EntitySet Name="Item" EntityType="IsimaModel.Item" />
+    <EntitySet Name="Inventory" EntityType="IsimaModel.Inventory" />
+    <AssociationSet Name="FK_Inventory_Item" Association="IsimaModel.FK_Inventory_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Inventory" EntitySet="Inventory" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Scene">
     <Key>
@@ -19,5 +24,27 @@
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Inventory" Relationship="IsimaModel.FK_Inventory_Item" FromRole="Item" ToRole="Inventory" />
   </EntityType>
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="ID_item" />
+    </Key>
+    <Property Name="ID_item" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="IsimaModel.FK_Inventory_Item" FromRole="Inventory" ToRole="Item" />
+  </EntityType>
+  <Association Name="FK_Inventory_Item">
+    <End Type="IsimaModel.Item" Role="Item" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="IsimaModel.Inventory" Role="Inventory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Inventory">
+        <PropertyRef Name="ID_item" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

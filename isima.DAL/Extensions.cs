@@ -58,5 +58,29 @@ namespace Isima.DAL
             }
             return null;
         }
+
+
+
+        public static Inventory ToEntity(this InventoryDto dto)
+        {
+            return new Inventory
+            {
+                ID_item = dto.ID_item
+            };
+        }
+
+        public static InventoryDto ToDto(this Inventory entity)
+        {
+            if (entity != null)
+            {
+                return new InventoryDto
+                {
+                    ID_item = entity.ID_item
+                };
+            }
+            return null;
+        }
     }
 }
+
+

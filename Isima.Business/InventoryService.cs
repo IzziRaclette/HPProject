@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Isima.Business
 {
-    public class SceneService
+    public class InventoryService
     {
-        public SceneDto GetScene(int ID)
+        public IList<InventoryDto> GetInventory()
         {
-            using (SceneRepository _sceneRepo = new SceneRepository())
+            using (InventoryRepository _studentRepo = new InventoryRepository())
             {
-                return _sceneRepo.GetScene(ID);
+                return _studentRepo.GetInventory();
             }
         }
     }
