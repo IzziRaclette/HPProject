@@ -1,6 +1,5 @@
 ﻿using isima.DAL;
 using Isima.DTO;
-using Isima.DTO.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,6 +79,66 @@ namespace Isima.DAL
             }
             return null;
         }
+
+
+
+        public static Player ToEntity(this PlayerDto dto)
+        {
+            return new Player
+            {
+                ID = dto.ID,
+                Life = dto.Life,
+                Mana = dto.Mana
+
+            };
+        }
+
+        public static PlayerDto ToDto(this Player entity)
+        {
+            if (entity != null)
+            {
+                return new PlayerDto
+                {
+                    ID = entity.ID,
+                    Life = entity.Life,
+                    Mana = entity.Mana
+                };
+            }
+            return null;
+        }
+
+
+
+
+
+
+        public static Flag ToEntity(this FlagDto dto)
+        {
+            return new Flag
+            {
+                Name = dto.Name,
+                State = dto.State
+            };
+        }
+        public static FlagDto ToDto(this Flag entity)
+        {
+            if (entity != null)
+            {
+                return new FlagDto
+                {
+                    Name = entity.Name,
+                    State = entity.State
+                };
+            }
+            return null;
+        }
+
+
+
+
+
+
+
     }
 }
 

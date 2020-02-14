@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FlagService.cs" />
+    <Compile Include="PlayerService.cs" />
     <Compile Include="ItemService.cs" />
     <Compile Include="InventoryService.cs" />
     <Compile Include="SceneService.cs" />

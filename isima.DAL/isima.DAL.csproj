@@ -53,10 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Flag.cs">
+      <DependentUpon>IsimaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Inventory.cs">
       <DependentUpon>IsimaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Item.cs">
+      <DependentUpon>IsimaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FlagRepository.cs" />
+    <Compile Include="PlayerRepository.cs" />
+    <Compile Include="Player.cs">
       <DependentUpon>IsimaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Scene.cs">

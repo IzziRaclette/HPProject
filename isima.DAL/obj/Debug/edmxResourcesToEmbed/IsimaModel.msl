@@ -26,5 +26,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Player">
+      <EntityTypeMapping TypeName="IsimaModel.Player">
+        <MappingFragment StoreEntitySet="Player">
+          <ScalarProperty Name="Mana" ColumnName="Mana" />
+          <ScalarProperty Name="Life" ColumnName="Life" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Flag">
+      <EntityTypeMapping TypeName="IsimaModel.Flag">
+        <MappingFragment StoreEntitySet="Flag">
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

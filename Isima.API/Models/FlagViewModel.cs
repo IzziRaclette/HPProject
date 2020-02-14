@@ -8,16 +8,8 @@ namespace Isima.API.Models
     /// <summary>
     /// Scenb render to client 
     /// </summary>
-    public class ItemViewModel
+    public class FlagViewModel
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public int ID { get; set; }
-
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
@@ -26,12 +18,14 @@ namespace Isima.API.Models
         /// </value>
         public string Name { get; set; }
 
+
         /// <summary>
-        /// Gets or sets the content.
+        /// Gets or sets the state.
         /// </summary>
         /// <value>
-        /// The content.
+        /// The state.
         /// </value>
-        public string Content { get; set; }
+        public bool State { get; set; }
+
     }
 }

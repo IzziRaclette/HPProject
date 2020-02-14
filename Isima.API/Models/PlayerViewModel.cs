@@ -8,7 +8,7 @@ namespace Isima.API.Models
     /// <summary>
     /// Scenb render to client 
     /// </summary>
-    public class SceneViewModel
+    public class PlayerViewModel
     {
         /// <summary>
         /// Gets or sets the identifier.
@@ -18,20 +18,21 @@ namespace Isima.API.Models
         /// </value>
         public int ID { get; set; }
 
-        /// <summary>
-        /// Gets or sets the title.
-        /// </summary>
-        /// <value>
-        /// The title.
-        /// </value>
-        public string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets the content.
+        /// Gets or sets the life.
+        /// </summary>
+        /// <value>
+        /// The life.
+        /// </value>
+        public int Life { get; set; }
+
+        /// <summary>
+        /// Gets or sets the mana.
         /// </summary>
         /// <value>
         /// The content.
         /// </value>
-        public string Content { get; set; }
+        public int Mana { get; set; }
     }
 }

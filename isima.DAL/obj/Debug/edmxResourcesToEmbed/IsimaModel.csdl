@@ -8,6 +8,8 @@
       <End Role="Item" EntitySet="Item" />
       <End Role="Inventory" EntitySet="Inventory" />
     </AssociationSet>
+    <EntitySet Name="Player" EntityType="IsimaModel.Player" />
+    <EntitySet Name="Flag" EntityType="IsimaModel.Flag" />
   </EntityContainer>
   <EntityType Name="Scene">
     <Key>
@@ -47,4 +49,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Life" Type="Int32" Nullable="false" />
+    <Property Name="Mana" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Flag">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="State" Type="Boolean" Nullable="false" />
+  </EntityType>
 </Schema>

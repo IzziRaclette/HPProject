@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="IsimaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Flag">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="Inventory">
           <Key>
             <PropertyRef Name="ID_item" />
@@ -18,6 +25,14 @@
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Content" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Life" Type="int" Nullable="false" />
+          <Property Name="Mana" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Scene">
           <Key>
@@ -42,8 +57,10 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="IsimaModelStoreContainer">
+          <EntitySet Name="Flag" EntityType="Self.Flag" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Scene" EntityType="Self.Scene" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Inventory_Item" Association="Self.FK_Inventory_Item">
             <End Role="Item" EntitySet="Item" />
@@ -62,6 +79,8 @@
             <End Role="Item" EntitySet="Item" />
             <End Role="Inventory" EntitySet="Inventory" />
           </AssociationSet>
+          <EntitySet Name="Player" EntityType="IsimaModel.Player" />
+          <EntitySet Name="Flag" EntityType="IsimaModel.Flag" />
         </EntityContainer>
         <EntityType Name="Scene">
           <Key>
@@ -101,6 +120,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Life" Type="Int32" Nullable="false" />
+          <Property Name="Mana" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Flag">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="State" Type="Boolean" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -129,6 +163,23 @@
             <EntityTypeMapping TypeName="IsimaModel.Inventory">
               <MappingFragment StoreEntitySet="Inventory">
                 <ScalarProperty Name="ID_item" ColumnName="ID_item" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Player">
+            <EntityTypeMapping TypeName="IsimaModel.Player">
+              <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="Mana" ColumnName="Mana" />
+                <ScalarProperty Name="Life" ColumnName="Life" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Flag">
+            <EntityTypeMapping TypeName="IsimaModel.Flag">
+              <MappingFragment StoreEntitySet="Flag">
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

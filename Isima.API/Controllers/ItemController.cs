@@ -1,7 +1,6 @@
 ﻿using Isima.API.Models;
 using Isima.Business;
 using Isima.DTO;
-using Isima.DTO.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +12,7 @@ using System.Web.Http.Description;
 namespace Isima.API.Controllers
 {
     /// <summary>
-    /// Student Endpoint
+    /// Item Endpoint
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
     public class ItemController : ApiController

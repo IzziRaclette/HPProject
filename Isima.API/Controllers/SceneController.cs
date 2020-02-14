@@ -1,7 +1,6 @@
 ﻿using Isima.API.Models;
 using Isima.Business;
 using Isima.DTO;
-using Isima.DTO.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,7 +1,6 @@
 ﻿using Isima.API.Models;
 using Isima.Business;
 using Isima.DTO;
-using Isima.DTO.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,55 +47,5 @@ namespace Isima.API.Controllers
             return Ok(inventoryList);
 
         }
-
-        /*
-        //public IHttpActionResult Get(int id)
-        //{
-        //   if(id <= 0)
-        //    {
-        //        return BadRequest("Inventory Id is required");
-        //    }
-        //   var inventory = _inventoryService.Gets
-        //}
-
-        /// <summary>
-        /// Posts the specified inventory.
-        /// </summary>
-        /// <param name="inventory">The inventory.</param>
-        /// <response code="200"> Created</response>
-        /// <response code="400"> parameter issue</response>
-        /// <response code="500">Other issues, see message included</response>
-        public IHttpActionResult Post([FromBody]InventoryViewModel inventory)
-        {
-            if (inventory == null)
-            {
-                return BadRequest("Inventory Id is required");
-            }
-
-            try
-            {
-                _inventoryService.AddInventory(new InventoryDto
-                {
-                    ID_item = inventory.ID_item
-                });
-
-                return Ok();
-            }
-            catch (Exception e)
-            {
-                return InternalServerError(e);
-            }
-
-        }
-
-        //// PUT: api/Inventory/5
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE: api/Inventory/5
-        //public void Delete(int id)
-        //{
-        //}*/
     }
 }

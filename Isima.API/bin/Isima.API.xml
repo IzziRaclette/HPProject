@@ -502,9 +502,51 @@
             <returns></returns>
             <response code="200"> List of items of inventory</response>
         </member>
+        <member name="T:Isima.API.Controllers.FlagController">
+            <summary>
+            Flag Endpoint
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+        </member>
+        <member name="M:Isima.API.Controllers.FlagController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Isima.API.Controllers.FlagController"/> class.
+            </summary>
+        </member>
+        <member name="M:Isima.API.Controllers.FlagController.Get(System.String)">
+            <summary>
+            Get a Flag by its Name
+            </summary>
+            <remarks>
+            Get a Flag by its Name
+            </remarks>
+            <returns></returns>
+            <response code="200"> A Flag</response>
+        </member>
+        <member name="T:Isima.API.Controllers.PlayerController">
+            <summary>
+            Player Endpoint
+            </summary>
+            <seealso cref="T:System.Web.Http.ApiController" />
+        </member>
+        <member name="M:Isima.API.Controllers.PlayerController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Isima.API.Controllers.PlayerController"/> class.
+            </summary>
+        </member>
+        <member name="M:Isima.API.Controllers.PlayerController.Get(System.Int32)">
+            <summary>
+            Get a Player by its ID 
+            </summary>
+            <remarks>
+            Get a Player by its ID 
+            </remarks>
+            <returns></returns>
+            <response code="200"> A Player</response>
+        </member>
         <member name="T:Isima.API.Controllers.ItemController">
             <summary>
-            Student Endpoint
+            Item Endpoint
             </summary>
             <seealso cref="T:System.Web.Http.ApiController" />
         </member>
@@ -555,6 +597,56 @@
             </summary>
             <value>
             The identifier.
+            </value>
+        </member>
+        <member name="T:Isima.API.Models.FlagViewModel">
+            <summary>
+            Scenb render to client 
+            </summary>
+        </member>
+        <member name="P:Isima.API.Models.FlagViewModel.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Isima.API.Models.FlagViewModel.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>
+            The state.
+            </value>
+        </member>
+        <member name="T:Isima.API.Models.PlayerViewModel">
+            <summary>
+            Scenb render to client 
+            </summary>
+        </member>
+        <member name="P:Isima.API.Models.PlayerViewModel.ID">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="P:Isima.API.Models.PlayerViewModel.Life">
+            <summary>
+            Gets or sets the life.
+            </summary>
+            <value>
+            The life.
+            </value>
+        </member>
+        <member name="P:Isima.API.Models.PlayerViewModel.Mana">
+            <summary>
+            Gets or sets the mana.
+            </summary>
+            <value>
+            The content.
             </value>
         </member>
         <member name="T:Isima.API.Models.ItemViewModel">
