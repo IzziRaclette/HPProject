@@ -27,11 +27,19 @@ namespace isima.DAL
             try
             {
                 List<Flag> flagEntities = _dbcontext.Flag.Where(x => x.Name == Name).ToList();
-                return flagEntities.Select(x => new FlagDto
+                var flags = flagEntities.Select(x => new FlagDto
                 {
                     Name = x.Name,
                     State = x.State
-                }).ToList().ElementAt(0);
+                }).ToList();
+                if (flags.Count == 0)
+                {
+                    return new FlagDto { Name = Name, State = false };
+                } 
+                else
+                {
+                    return flags.First();
+                }
             }
             catch (Exception e)
             {
