@@ -48,6 +48,32 @@ namespace isima.DAL
             }
         }
 
+        public void UpdateFlag(FlagDto flag)
+        {
+            try
+            {
+                var dbFlag = _dbcontext.Flag.Where(x => x.Name == flag.Name).SingleOrDefault();
+                if (dbFlag == null)
+                {
+                    _dbcontext.Flag.Add(new Flag
+                    {
+                        Name = flag.Name,
+                        State = flag.State
+                    });
+                }
+                else
+                {
+                    dbFlag.State = flag.State;
+                }
+                _dbcontext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
 
         public void Dispose()
         {

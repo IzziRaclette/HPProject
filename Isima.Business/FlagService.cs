@@ -17,5 +17,13 @@ namespace Isima.Business
                 return _flagRepo.GetFlag(Name);
             }
         }
+
+        public void UpdateFlag(FlagDto flag)
+        {
+            using (FlagRepository _flagRepo = new FlagRepository())
+            {
+                _flagRepo.UpdateFlag(flag);
+            }
+        }
     }
 }
