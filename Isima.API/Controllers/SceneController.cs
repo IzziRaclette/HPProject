@@ -1,6 +1,7 @@
 ﻿using Isima.API.Models;
 using Isima.Business;
 using Isima.DTO;
+using Microsoft.AspNetCore.Cors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.Cors;
 
 namespace Isima.API.Controllers
 {
@@ -15,6 +17,7 @@ namespace Isima.API.Controllers
     /// Student Endpoint
     /// </summary>
     /// <seealso cref="System.Web.Http.ApiController" />
+    [System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SceneController : ApiController
     {
         private readonly SceneService _sceneService = null;
@@ -39,13 +42,15 @@ namespace Isima.API.Controllers
         public IHttpActionResult Get(int ID)
         {
             SceneDto sceneDto = _sceneService.GetScene(ID);
+            //var actions = new Dictionary<String, SceneService.Action>();
 
             return Ok(new SceneViewModel
             {
                 ID = sceneDto.ID,
                 Content = sceneDto.Content,
                 Title = sceneDto.Title
-            });
+                //Title = SceneService.parseBytecode(sceneDto.Title, actions)
+        });
         }
     }
 }
